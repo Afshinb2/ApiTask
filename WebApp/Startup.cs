@@ -31,7 +31,7 @@ namespace ApiTask.WebApp
             services.AddScoped<Services.IExchangeProvider, Services.ExchangeProvider>();
             services.AddScoped<Services.ICacheProvider, Services.InMemoryCacheProvider>();
 
-            services.AddHttpClient<Services.DataProvider>();
+            services.AddHttpClient<Services.WebDataProvider>();
 
         }
 
