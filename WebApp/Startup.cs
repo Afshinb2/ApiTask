@@ -26,12 +26,11 @@ namespace ApiTask.WebApp
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApp", Version = "v1" });
             });
 
-            services.AddScoped<Services.IWebDataProvider, Services.WebDataProvider>();
             services.AddScoped<Services.IDataProvider, Services.DataProvider>();
             services.AddScoped<Services.IExchangeProvider, Services.ExchangeProvider>();
             services.AddScoped<Services.ICacheProvider, Services.InMemoryCacheProvider>();
 
-            services.AddHttpClient<Services.WebDataProvider>();
+            services.AddHttpClient<Services.IWebDataProvider, Services.WebDataProvider>();
 
         }
 

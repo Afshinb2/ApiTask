@@ -42,10 +42,11 @@ namespace ApiTask.Services.Tests
 
             var services = new ServiceCollection();
 
-            services.AddTransient<IWebDataProvider, MockWebDataProvider>();
             services.AddTransient<IDataProvider, DataProvider>();
             services.AddTransient<IExchangeProvider, ExchangeProvider>();
             services.AddTransient<ICacheProvider, InMemoryCacheProvider>();
+
+            services.AddTransient<IWebDataProvider, MockWebDataProvider>();
 
             services.AddSingleton<IConfiguration>(Configuration);
 
